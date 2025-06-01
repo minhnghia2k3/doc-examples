@@ -11,4 +11,4 @@ No setup and maintenance are required to use TestCloud as your test environment.
 
 Katalon TestCloud is integrated with Katalon TestOps and Katalon Studio. For more information, see Enable TestCloud integration in Katalon Studio.
 
-To know the internet browsers, operating systems and mobile devices offered in TestCloud, see Supported environments for Katalon TestCloud. To keep up with TestCloud latest updates, see Katalon TestCloud Release Notes.
+To know the internet browsers, operating systems and mobile devices offered in TestCloud, see Supported environments for Katalon TestCloud. To keep up with TestCloud latest updates, see Katalon TestCloud Release Notes..

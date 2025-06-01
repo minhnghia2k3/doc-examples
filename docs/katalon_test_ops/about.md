@@ -23,4 +23,4 @@ Executing Katalon TestCloud, Katalon Runtime Engine Katalon TestCloud is a cloud
 Analyzing Katalon TestOps After every execution, Katalon generates reports for troubleshooting and monitoring test activities. Katalon TestOps provides various of test reports such as: release readiness, requirement coverage, traceability matrix, etc. To learn more about analyzing test reports, refer to this document: Introduction to test analysis.
 Maintaining Katalon Studio Katalon Studio provides several methods to handle errors during test execution and fixing tests so they stay up to date with code changes. These features can reduce your test maintenance efforts substantially. To learn more about test maintenance, refer to this document: Introduction to test maintenance.
 tip
-To quickly search documents, press Ctrl + K (macOS: ⌘ + K)
+To quickly search documents, press Ctrl + K (macOS: ⌘ + K).
