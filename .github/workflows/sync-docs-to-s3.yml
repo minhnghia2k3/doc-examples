@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "docs/**"
+      - ".github/workflows/**"
     branches: [master]
 
 jobs:
@@ -30,6 +31,23 @@ jobs:
 
       - name: Trigger Bedrock ingestion
         run: |
-          aws bedrock-agent start-ingestion-job \
-            --knowledge-base-id ${{ secrets.KNOWLEDGE_BASE_ID }} \
-            --data-source-id ${{ secrets.DOCS_DATA_SOURCE_ID }}
+          max_attempts=5
+          attempt=1
+          while [ $attempt -le $max_attempts ]; do
+            echo "Attempt $attempt of $max_attempts..."
+            if aws bedrock-agent start-ingestion-job \
+              --knowledge-base-id ${{ secrets.KNOWLEDGE_BASE_ID }} \
+              --data-source-id ${{ secrets.DOCS_DATA_SOURCE_ID }}; then
+              echo "Ingestion job started successfully"
+              break
+            else
+              if [ $attempt -eq $max_attempts ]; then
+                echo "Failed to start ingestion job after $max_attempts attempts"
+                exit 1
+              else
+                echo "Attempt $attempt failed, retrying in 30 seconds..."
+                sleep 30
+                ((attempt++))
+              fi
+            fi
+          done
