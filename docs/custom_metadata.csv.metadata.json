@@ -3,5 +3,22 @@
         "role": 1,
         "sources": "Docs",
         "url": "https//docs.katalon.com"
+    },
+    "documentStructureConfiguration": {
+        "type": "RECORD_BASED_STRUCTURE_METADATA",
+        "recordBasedStructureMetadata": {
+            "contentFields": [
+                {
+                    "url": "string"
+                }
+            ],
+            "metadataFieldsSpecification": {
+                "fieldsToInclude": [
+                    {
+                        "role": "string"
+                    }
+                ]
+            }
+        }
     }
 }
