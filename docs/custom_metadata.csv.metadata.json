@@ -1,16 +1,7 @@
 {
     "metadataAttributes": {
-        "source": "GitHub",
-        "category": "Docs"
-    },
-    "documentStructureConfiguration": {
-        "type": "RECORD_BASED_STRUCTURE_METADATA",
-        "recordBasedStructureMetadata": {
-            "contentFields": [
-                {
-                    "fieldName": "role"
-                }
-            ]
-        }
+        "role": 1,
+        "sources": "Docs",
+        "url": "https//docs.katalon.com"
     }
 }
