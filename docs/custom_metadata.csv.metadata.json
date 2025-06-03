@@ -1,0 +1,16 @@
+{
+    "metadataAttributes": {
+        "source": "GitHub",
+        "category": "Docs"
+    },
+    "documentStructureConfiguration": {
+        "type": "RECORD_BASED_STRUCTURE_METADATA",
+        "recordBasedStructureMetadata": {
+            "contentFields": [
+                {
+                    "fieldName": "role"
+                }
+            ]
+        }
+    }
+}
