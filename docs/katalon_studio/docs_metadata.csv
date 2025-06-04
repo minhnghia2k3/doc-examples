@@ -1,2 +1,2 @@
-role,sources,url
-1,"docs","https://docs.katalon.com"
+document_s3_path,role,sources,url
+katalon-docs/about.md,1,"docs","https://docs.katalon.com"

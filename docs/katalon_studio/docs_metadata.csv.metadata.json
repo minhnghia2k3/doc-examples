@@ -9,13 +9,19 @@
         "recordBasedStructureMetadata": {
             "contentFields": [
                 {
-                    "url": "string"
+                    "document_s3_path": "string"
                 }
             ],
             "metadataFieldsSpecification": {
                 "fieldsToInclude": [
                     {
                         "role": "string"
+                    },
+                    {
+                        "sources": "string"
+                    },
+                    {
+                        "url": "string"
                     }
                 ]
             }
