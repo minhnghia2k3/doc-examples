@@ -1,7 +1,7 @@
 {
     "metadataAttributes": {
         "role": 1,
-        "sources": "Docs",
+        "sources": "docs",
         "url": "https//docs.katalon.com"
     },
     "documentStructureConfiguration": {
