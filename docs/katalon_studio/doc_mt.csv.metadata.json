@@ -1,27 +1,26 @@
 {
     "metadataAttributes": {
-        "role": 1,
-        "sources": "docs",
-        "url": "https//docs.katalon.com"
+        "role": "1",
+        "source": "docs",
+        "url": "https://docs.katalon.com/"
     },
     "documentStructureConfiguration": {
         "type": "RECORD_BASED_STRUCTURE_METADATA",
         "recordBasedStructureMetadata": {
             "contentFields": [
                 {
-                    "document_s3_path": "string"
+                    "fieldName": "source"
                 }
             ],
             "metadataFieldsSpecification": {
                 "fieldsToInclude": [
                     {
-                        "role": "string"
-                    },
+                        "fieldName": "role"
+                    }
+                ],
+                "fieldsToExclude": [
                     {
-                        "sources": "string"
-                    },
-                    {
-                        "url": "string"
+                        "fieldName": "url"
                     }
                 ]
             }

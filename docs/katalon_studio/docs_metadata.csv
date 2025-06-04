@@ -1,3 +1,0 @@
-document_s3_path,role,sources,url
-s3://nghia-docs-bucket/docs/katalon_studio/about.md,1,docs,https://docs.katalon.com/katalon-studio/about.md
-s3://nghia-docs-bucket/docs/katalon_test_cloud/about.md,1,docs,https://docs.katalon.com/katalon-test-cloud/about.md
