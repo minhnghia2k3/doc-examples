@@ -10,13 +10,31 @@ on:
 jobs:
   sync-and-ingest:
     runs-on: ubuntu-latest
-
     permissions:
       id-token: write
       contents: read
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Generate metadata files
+        run: |
+          accessLevel=1
+          find ./docs -type f -name "*.md" | while read file; do
+            rel_path=${file#./docs/}
+            folder=$(dirname "$rel_path")
+            filename=$(basename "$file" .md)
+            
+            cat > "${file}.metadata.json" << EOF
+          {
+              "metadataAttributes": {
+                  "accessLevel": $accessLevel,
+                  "url": "https://docs.katalon.com/${folder}/${filename}"
+              }
+          }
+          EOF
+            echo "Generated metadata for $rel_path"
+          done
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
