@@ -31,4 +31,4 @@ Share real-time notifications of test results via email, Slack or Teams.
 
 Integrate Katalon tests into your CI/CD pipeline with Katalon Runtime Engine.
 
-If you are new to Katalon Studio, learn how to use the product with Quick guide for testers..
+If you are new to Katalon Studio, learn how to use the product with Quick guide for testers.

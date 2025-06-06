@@ -45,7 +45,7 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync ./docs/ s3://${{ secrets.DOCS_S3_BUCKET_ID }}/docs/ --delete
+          aws s3 sync ./docs/ s3://${{ secrets.DOCS_S3_BUCKET_ID }}/docs/ --delete --size-only
 
       - name: Trigger Bedrock ingestion
         run: |
