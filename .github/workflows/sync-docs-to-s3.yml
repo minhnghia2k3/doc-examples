@@ -1,11 +1,6 @@
 name: Sync Katalon Docs to S3 and Trigger Bedrock Ingestion
 
 on:
-  push:
-    paths:
-      - "docs/**"
-      - ".github/workflows/**"
-    branches: [master]
   workflow_call:
     inputs:
       doc-path: # "./docs"
@@ -64,7 +59,7 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync ${{ inputs.doc-path }} s3://${{ secrets.DOCS_S3_BUCKET_ID }}/docs/ --size-only --delete
+          aws s3 sync ${{ inputs.doc-path }} s3://${{ secrets.DOCS_S3_BUCKET_ID }}/docs/ --delete --size-only
 
       - name: Trigger Bedrock ingestion
         run: |
