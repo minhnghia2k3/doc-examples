@@ -21,14 +21,11 @@ jobs:
         run: |
           accessLevel=1
           find ./docs -type f -name "*.md" | while read file; do
-            metadata_file="${file}.metadata.json"
-            # Only generate metadata if the file doesn't exist or the md file is newer
-            if [ ! -f "$metadata_file" ] || [ "$file" -nt "$metadata_file" ]; then
-              rel_path=${file#./docs/}
-              folder=$(dirname "$rel_path")
-              filename=$(basename "$file" .md)
-              
-              cat > "$metadata_file" << EOF
+            rel_path=${file#./docs/}
+            folder=$(dirname "$rel_path")
+            filename=$(basename "$file" .md)
+            
+            cat > "${file}.metadata.json" << EOF
           {
               "metadataAttributes": {
                   "access_level": $accessLevel,
@@ -36,8 +33,7 @@ jobs:
               }
           }
           EOF
-              echo "Generated metadata for $rel_path"
-            fi
+            echo "Generated metadata for $rel_path"
           done
 
       - name: Configure AWS credentials
