@@ -28,7 +28,7 @@ jobs:
             cat > "${file}.metadata.json" << EOF
           {
               "metadataAttributes": {
-                  "accessLevel": $accessLevel,
+                  "access_level": $accessLevel,
                   "url": "https://docs.katalon.com/${folder}/${filename}"
               }
           }
