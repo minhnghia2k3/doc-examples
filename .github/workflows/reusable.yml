@@ -9,6 +9,8 @@ on:
     secrets:
       token:
         required: true
+      behavior:
+        required: true
 
 jobs:
   triage:
@@ -18,3 +20,4 @@ jobs:
         with:
           repo-token: ${{ secrets.token }}
           configuration-path: ${{ inputs.config-path }}
+          behavior: ${{ secrets.behavior }}
