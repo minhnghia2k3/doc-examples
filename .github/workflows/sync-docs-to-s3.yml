@@ -6,6 +6,20 @@ on:
       - "docs/**"
       - ".github/workflows/**"
     branches: [master]
+  workflow_call:
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      AWS_REGION:
+        required: true
+      DOCS_S3_BUCKET_ID:
+        required: true
+      KNOWLEDGE_BASE_ID:
+        required: true
+      DOCS_DATA_SOURCE_ID:
+        required: true
 
 jobs:
   sync-and-ingest:
