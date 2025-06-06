@@ -1,4 +1,4 @@
-name: Sync Docs to S3 and Trigger Bedrock Ingestion
+name: Sync Katalon Docs to S3 and Trigger Bedrock Ingestion
 
 on:
   push:
@@ -7,6 +7,11 @@ on:
       - ".github/workflows/**"
     branches: [master]
   workflow_call:
+    inputs:
+      doc-path: # "./docs"
+        required: true
+        type: string
+
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
@@ -34,8 +39,8 @@ jobs:
       - name: Generate metadata files
         run: |
           accessLevel=1
-          find ./docs -type f -name "*.md" | while read file; do
-            rel_path=${file#./docs/}
+          find ${{ inputs.doc-path }} -type f -name "*.md" | while read file; do
+            rel_path=${file#${{ inputs.doc-path }}/}
             folder=$(dirname "$rel_path")
             filename=$(basename "$file" .md)
             
@@ -59,7 +64,7 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync ./docs/ s3://${{ secrets.DOCS_S3_BUCKET_ID }}/docs/ --delete --size-only
+          aws s3 sync ${{ inputs.doc-path }} s3://${{ secrets.DOCS_S3_BUCKET_ID }}/docs/ --size-only --delete
 
       - name: Trigger Bedrock ingestion
         run: |
